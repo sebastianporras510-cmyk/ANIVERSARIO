@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>Un juego para ti 💌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="particles"></div>
+
+<div class="app">
+
+  <!-- ===================== PANTALLA 1: BIENVENIDA ===================== -->
+  <section id="screen-welcome" class="screen active">
+    <div class="card">
+      <div class="deco-row">🌸 🤍 🌸</div>
+      <h1 class="title">Hola 🤍<br>¿Quieres jugar<br>un juego?</h1>
+      <p class="body-text">Un pequeño juego hecho con todo mi amor ✨</p>
+      <button class="btn btn-yes" id="btnYes">Sí, quiero 💚</button>
+      <button class="btn btn-no" id="btnNo">No me interesa</button>
+    </div>
+  </section>
+
+  <!-- ===================== PANTALLA 2: LA PRUEBA DE FUEGO ===================== -->
+  <section id="screen-test" class="screen">
+    <div class="card">
+      <div class="deco-row">🌷 ✨ 🌷</div>
+      <h2 class="subtitle">La Prueba de Fuego 🔥</h2>
+      <p class="body-text">Antes de iniciar, debes demostrar que si sabes nuestra fecha.<br><br>¿Cuál es la fecha de nuestro aniversario?</p>
+      <!-- Formato esperado: DD/MM/AA -->
+      <input type="text" id="dateInput" class="field" placeholder="DD/MM/AA" maxlength="8" inputmode="numeric">
+      <div class="hint" id="dateHint"></div>
+      <button class="btn btn-primary" id="btnSend">Enviar 💌</button>
+    </div>
+  </section>
+
+  <!-- ===================== PANTALLA 3: NIVEL 1 - EL LABERINTO ===================== -->
+  <section id="screen-maze" class="screen">
+    <div class="card card-maze">
+      <h2 class="subtitle" style="margin-bottom:2px;">Nivel 1: El Laberinto 🧩</h2>
+      <p class="progress-note">¡Encuentra el camino hacia mí! 💗 <span id="giftCounter">0/5</span></p>
+      <div class="maze-wrap">
+        <div id="mazeGrid"></div>
+        <div class="dpad">
+          <div class="dbtn" id="dUp">⬆️</div>
+          <div class="dbtn" id="dLeft">⬅️</div>
+          <div class="dbtn" id="dDown">⬇️</div>
+          <div class="dbtn" id="dRight">➡️</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PANTALLA 4: SORPRESA FINAL ===================== -->
+  <section id="screen-final" class="screen">
+    <div class="card">
+      <div class="hearts-burst">💗 💖 💗</div>
+      <!-- Reemplaza el src en config.js -> CONFIG.finalPhotoSrc -->
+      <img class="final-photo" id="finalPhoto" src="" alt="Foto romántica final" onerror="this.style.display='none'">
+      <h2 class="subtitle" style="font-size:.78rem;">🐱 Mi papita, mi chinita, mi niña la mejor novia de todas te amo 🐱</h2>
+      <!-- Reemplaza el src en config.js -> CONFIG.songSrc -->
+      <!-- Reemplaza el src en config.js -> CONFIG.videoSrc -->
+      <video controls id="finalVideo" class="final-video" playsinline>
+        <source src="" type="video/mp4">
+      </video>
+      <p class="signature">Hecho con todo mi amor ✨ — Sebas</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===================== MODAL: OBSEQUIOS DEL CAMINO (reutilizable para los 5) ===================== -->
+<div class="modal-overlay" id="modalGift">
+  <div class="modal-card">
+    <h3 id="giftTitle"></h3>
+    <img class="modal-photo" id="giftPhoto" src="" alt="Recuerdo" onerror="this.style.display='none'">
+    <p id="giftText"></p>
+    <button class="btn btn-primary" id="closeGift">Continuar</button>
+  </div>
+</div>
+
+<!-- ===================== MODAL: ¡GANASTE! ===================== -->
+<div class="modal-overlay" id="modalWin">
+  <div class="modal-card">
+    <h3>¡Gracias por este maravilloso año! 🎉</h3>
+    <p>Mi papita, este es un pequeño regalo que hice para ti, lo hice con mucho cariño. Hemos pasado momentos muy lindos juntos, te he visto mejorar y dar tu mejor esfuerzo. Te amo mucho mucho mi chinita. Este solo es el comienzo de nuestro camino juntos. Te amo</p>
+    <button class="btn btn-primary" id="btnSeeSurprise">Ver sorpresa final</button>
+  </div>c v
+</div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
